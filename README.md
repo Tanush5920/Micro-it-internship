@@ -1,1 +1,143 @@
-# Micro-it-internship
+import random
+
+# Question bank (list of dictionaries)
+quiz_data = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A. Paris", "B. London", "C. Berlin", "D. Madrid"],
+        "correct": "A"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["A. Jupiter", "B. Mars", "C. Venus", "D. Mercury"],
+        "correct": "B"
+    },
+    {
+        "question": "What is 2 + 2?",
+        "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
+        "correct": "B"
+    }
+]
+
+def display_question(question_data):
+    """Display the question and options."""
+    print("\n" + question_data["question"])
+    for option in question_data["options"]:
+        print(option)
+
+def get_user_answer():
+    """Get and validate user's answer."""
+    while True:
+        answer = input("\nEnter your answer (A, B, C, or D): ").upper()
+        if answer in ["A", "B", "C", "D"]:
+            return answer
+        print("Invalid input! Please enter A, B, C, or D.")
+
+def run_quiz():
+    """Main function to run the quiz."""
+    score = 0
+    total_questions = len(quiz_data)
+    
+    # Shuffle questions for randomness
+    random.shuffle(quiz_data)
+    
+    print("Welcome to the Quiz Game!")
+    print("Answer the following questions by selecting A, B, C, or D.\n")
+    
+    for i, question in enumerate(quiz_data, 1):
+        print(f"Question {i}/{total_questions}:")
+        display_question(question)
+        user_answer = get_user_answer()
+        
+        # Check if answer is correct
+        if user_answer == question["correct"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {question['correct']}.")
+    
+    # Display final score and feedback
+    print("\nQuiz Completed!")
+    print(f"Your score: {score}/{total_questions} ({(score/total_questions)*100:.1f}%)")
+    
+    # Provide feedback based on performance
+    if score == total_questions:
+        print("Perfect! You're a quiz master!")
+    elif score >= total_questions // 2:
+        print("Good job! Keep practicing!")
+    else:
+        print("Better luck next time! Try again!")
+
+if __name__ == "__main__":
+    run_quiz()import random
+
+# Question bank (list of dictionaries)
+quiz_data = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A. Paris", "B. London", "C. Berlin", "D. Madrid"],
+        "correct": "A"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["A. Jupiter", "B. Mars", "C. Venus", "D. Mercury"],
+        "correct": "B"
+    },
+    {
+        "question": "What is 2 + 2?",
+        "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
+        "correct": "B"
+    }
+]
+
+def display_question(question_data):
+    """Display the question and options."""
+    print("\n" + question_data["question"])
+    for option in question_data["options"]:
+        print(option)
+
+def get_user_answer():
+    """Get and validate user's answer."""
+    while True:
+        answer = input("\nEnter your answer (A, B, C, or D): ").upper()
+        if answer in ["A", "B", "C", "D"]:
+            return answer
+        print("Invalid input! Please enter A, B, C, or D.")
+
+def run_quiz():
+    """Main function to run the quiz."""
+    score = 0
+    total_questions = len(quiz_data)
+    
+    # Shuffle questions for randomness
+    random.shuffle(quiz_data)
+    
+    print("Welcome to the Quiz Game!")
+    print("Answer the following questions by selecting A, B, C, or D.\n")
+    
+    for i, question in enumerate(quiz_data, 1):
+        print(f"Question {i}/{total_questions}:")
+        display_question(question)
+        user_answer = get_user_answer()
+        
+        # Check if answer is correct
+        if user_answer == question["correct"]:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {question['correct']}.")
+    
+    # Display final score and feedback
+    print("\nQuiz Completed!")
+    print(f"Your score: {score}/{total_questions} ({(score/total_questions)*100:.1f}%)")
+    
+    # Provide feedback based on performance
+    if score == total_questions:
+        print("Perfect! You're a quiz master!")
+    elif score >= total_questions // 2:
+        print("Good job! Keep practicing!")
+    else:
+        print("Better luck next time! Try again!")
+
+if __name__ == "__main__":
+    run_quiz()
